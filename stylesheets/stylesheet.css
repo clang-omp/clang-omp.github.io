@@ -330,6 +330,16 @@ Full-Width Styles
   /* background: url('../images/icon_download.png') no-repeat 0% 90%; */
 }
 
+.nav_link {
+  color: #fff;
+  display: block;
+  float: left;
+  width: 90px;
+  height:70px;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
 .zip_download_link {
   display: block;
   float: right;
