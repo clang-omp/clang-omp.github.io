@@ -79,52 +79,7 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
 <h2>
 <a name="a-simple-example" class="anchor" href="#a-simple-example"><span class="octicon octicon-link"></span></a>A simple example</h2>
 
-<pre><code>#include &lt;assert.h&gt;
-#include &lt;stdio.h&gt;
-const int N=4;
-int main(void) {
-  int A[N][N] = {{2,5,4,5},
-                 {2,8,12,3},
-                 {83,3342,11,2},
-                 {23,67,0,-23}};
-  int B[N][N] = {{43,67,9,4},
-                 {-12,324,0,45},
-                 {3,9,4,-7},
-                 {23,4,68,9}};
-  int C[N][N], C1[N][N];
-  int i, j, k;
-  printf("---- Serial\n");
-  for (i = 0; i &lt; N; ++i) {
-    for (j = 0; j &lt; N; ++j) {
-      int Sum = 0;
-      for (k = 0; k &lt; N; ++k) {
-        Sum += A[i][k] * B[k][j];
-      }
-      C[i][j] = Sum;
-    }
-  }
-  printf("---- Parallel\n");
-  #pragma omp parallel for collapse(2)
-  for (i = 0; i &lt; N; ++i) {
-    for (j = 0; j &lt; N; ++j) {
-      int Sum = 0;
-      #pragma omp parallel for
-      for (k = 0; k &lt; N; ++k) {
-        Sum += A[i][k] * B[k][j];
-      }
-      C1[i][j] = Sum;
-    }
-  }
-  printf("---- Check\n");
-  for (i = 0; i &lt; N; i++) {
-    for (j = 0; j &lt; N; j++) {
-      assert (C[i][j] == C1[i][j]);
-    }
-  }
-  printf("Passed\n");
-  return 0;
-}
-</code></pre>
+<pre><code><script src="http://pastebin.com/embed_js.php?i=9setJXbD"></script></code></pre>
 <script src="http://pastebin.com/embed_js.php?i=9setJXbD"></script>
 
 <p>Confirm that the compiler is working correctly by saving the above code code to a file.</p>
