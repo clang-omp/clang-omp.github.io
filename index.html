@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="OpenMP 3.1/Clang : A very preliminary implementation of the OpenMP® C/C++ language extensions in Clang/LLVM compiler " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>OpenMP 3.1/Clang</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/clang-omp">View on GitHub</a>
+
+          <h1 id="project_title">OpenMP 3.1/Clang</h1>
+          <h2 id="project_tagline">A very preliminary implementation of the OpenMP® C/C++ language extensions in Clang/LLVM compiler </h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>OpenMP is a specification for a set of compiler directives, library routines, and environment variables that can be used to specify shared memory parallelism in Fortran and C/C++ programs.</p>
+
+<h1>
+<a name="news" class="anchor" href="#news"><span class="octicon octicon-link"></span></a>News</h1>
+
+<p>-.-.- Initial release.</p>
+
+<h1>
+<a name="try-openmp-31clang" class="anchor" href="#try-openmp-31clang"><span class="octicon octicon-link"></span></a>Try OpenMP 3.1/Clang</h1>
+
+<h2>
+<a name="getting-the-source-code" class="anchor" href="#getting-the-source-code"><span class="octicon octicon-link"></span></a>Getting the source code</h2>
+
+<pre><code>$ git clone -b clang-omp https://github.com/clang-omp/llvm
+$ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang
+$ git clone -b clang-omp https://github.com/clang-omp/compiler-rt llvm/projects/compiler-rt
+</code></pre>
+
+<p>The source code structure follows Clang/LLVM: <a href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
+Also you need to get and build an <a href="http://www.openmprtl.org/">Intel® OpenMP* Runtime Library</a>.</p>
+
+<h2>
+<a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
+
+<p>To build clang with OpenMP 3.1 support just follow standard building procedure of clang/LLVM compiler (see <a href="http://clang.llvm.org/get_started.html">Getting Started: Building and Running Clang</a>).</p>
+
+<h2>
+<a name="using" class="anchor" href="#using"><span class="octicon octicon-link"></span></a>Using</h2>
+
+<p>To use the newly installed compiler, add the following to your environment. On Mac OS X, replace LD_LIBRARY_PATH with DYLD_LIBRARY_PATH.</p>
+
+<pre><code>export PATH=/install/prefix/bin:$PATH
+export C_INCLUDE_PATH=/install/prefix/include:\&lt;OpenMP include path\&gt;:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/install/prefix/include:\&lt;OpenMP include path\&gt;:$CPLUS_INCLUDE_PATH
+export LIBRARY_PATH=/install/prefix/lib:\&lt;OpenMP library path\&gt;:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/install/prefix/lib:\&lt;OpenMP library path\&gt;:$LD_LIBRARY_PATH
+</code></pre>
+
+<p>When you build a program that uses OpenMP®, add the following options to enable OpenMP support and link to the runtime library.</p>
+
+<pre><code>-Xclang -fopenmp -liomp5
+</code></pre>
+
+<h2>
+<a name="a-simple-example" class="anchor" href="#a-simple-example"><span class="octicon octicon-link"></span></a>A simple example</h2>
+
+<pre><code>#include &lt;assert.h&gt;
+#include &lt;stdio.h&gt;
+const int N=4;
+int main(void) {
+  int A[N][N] = {{2,5,4,5},
+                 {2,8,12,3},
+                 {83,3342,11,2},
+                 {23,67,0,-23}};
+  int B[N][N] = {{43,67,9,4},
+                 {-12,324,0,45},
+                 {3,9,4,-7},
+                 {23,4,68,9}};
+  int C[N][N], C1[N][N];
+  int i, j, k;
+  printf("---- Serial\n");
+  for (i = 0; i &lt; N; ++i) {
+    for (j = 0; j &lt; N; ++j) {
+      int Sum = 0;
+      for (k = 0; k &lt; N; ++k) {
+        Sum += A[i][k] * B[k][j];
+      }
+      C[i][j] = Sum;
+    }
+  }
+  printf("---- Parallel\n");
+  #pragma omp parallel for collapse(2)
+  for (i = 0; i &lt; N; ++i) {
+    for (j = 0; j &lt; N; ++j) {
+      int Sum = 0;
+      #pragma omp parallel for
+      for (k = 0; k &lt; N; ++k) {
+        Sum += A[i][k] * B[k][j];
+      }
+      C1[i][j] = Sum;
+    }
+  }
+  printf("---- Check\n");
+  for (i = 0; i &lt; N; i++) {
+    for (j = 0; j &lt; N; j++) {
+      assert (C[i][j] == C1[i][j]);
+    }
+  }
+  printf("Passed\n");
+  return 0;
+}
+</code></pre>
+
+<p>Confirm that the compiler is working correctly by saving the above code code to a file.</p>
+
+<pre><code>$ clang -Xclang -fopenmp -liomp5 test.c -o test
+$ ./test
+</code></pre>
+
+<h2>
+<a name="supported-platforms" class="anchor" href="#supported-platforms"><span class="octicon octicon-link"></span></a>Supported platforms</h2>
+
+<p>OS: Linux or Mac OS X
+Architecture: x86-64</p>
+
+<h2>
+<a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known issues</h2>
+
+<ol>
+<li>Using variable-length arrays in a OpenMP regions does not work yet.</li>
+</ol><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>LLVM, Clang, and Compiler-rt are distributed under LLVM's <a href="http://llvm.org/docs/DeveloperPolicy.html#license">"UIUC" BSD-Style license</a>. For details, including information about third-party components, see LICENSE.txt in the code repositories.</p>
+
+<h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>If you would like to report a bug, or make a feature request, you can submit an issue in Github <a href="https://github.com/clang-omp/clang/issues">here</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
