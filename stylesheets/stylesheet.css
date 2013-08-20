@@ -47,6 +47,10 @@ table {
   border-spacing: 0;
 }
 
+a:focus {
+  outline: none;
+}
+
 /*******************************************************************************
 Theme Styles
 *******************************************************************************/
@@ -268,7 +272,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 800px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -436,7 +440,7 @@ Small Device Styles
   }
 
   code, pre {
-    min-width: 320px;
+    white-space: pre-wrap;
     max-width: 480px;
     font-size: 11px;
   }
