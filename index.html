@@ -59,10 +59,10 @@ Also you need to get and build an <a href="http://www.openmprtl.org/">Intel® Op
 <p>To use the newly installed compiler, add the following to your environment. On Mac OS X, replace LD_LIBRARY_PATH with DYLD_LIBRARY_PATH.</p>
 
 <pre><code>export PATH=/install/prefix/bin:$PATH
-export C_INCLUDE_PATH=/install/prefix/include:\&lt;OpenMP include path\&gt;:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=/install/prefix/include:\&lt;OpenMP include path\&gt;:$CPLUS_INCLUDE_PATH
-export LIBRARY_PATH=/install/prefix/lib:\&lt;OpenMP library path\&gt;:$LIBRARY_PATH
-export LD_LIBRARY_PATH=/install/prefix/lib:\&lt;OpenMP library path\&gt;:$LD_LIBRARY_PATH
+export C_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$CPLUS_INCLUDE_PATH
+export LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRARY_PATH
 </code></pre>
 
 <p>When you build a program that uses OpenMP®, add the following options to enable OpenMP support and link to the runtime library.</p>
