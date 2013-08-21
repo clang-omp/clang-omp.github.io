@@ -83,8 +83,8 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
 
 <p>Confirm that the compiler is working correctly by saving the above code code to a file.</p>
 
-<pre><code>$ clang -Xclang -fopenmp -liomp5 test.c -o test
-$ ./test
+<pre><code>$ clang -Xclang -fopenmp -liomp5 OpenMP.c -o OpenMP
+$ ./OpenMP
 </code></pre>
 
 <h2>
