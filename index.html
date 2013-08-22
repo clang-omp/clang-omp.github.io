@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="description"
-  content="OpenMP/Clang : An implementation of the OpenMP&reg; C/C++ language extensions in Clang/LLVM compiler ">
+  content="OpenMP/Clang : An implementation of the OpenMP® C/C++ language extensions in Clang/LLVM compiler ">
   <link rel="stylesheet" type="text/css" media="screen"
   href="stylesheets/stylesheet.css">
   <title>OpenMP/Clang</title>
@@ -19,7 +19,7 @@ href="https://github.com/clang-omp?tab=repositories">View on GitHub</a>
 
 <h1 id="project_title">OpenMP/Clang</h1>
 
-<h2 id="project_tagline">An implementation of the OpenMP&reg; C/C++ language
+<h2 id="project_tagline">An implementation of the OpenMP® C/C++ language
 extensions in Clang/LLVM compiler </h2>
 
 <div id="downloads">
@@ -32,10 +32,10 @@ href="#contact">Contact</a> </div>
 
 <div id="main_content_wrap" class="outer">
 <section id=main_content class=inner>
-<p>OpenMP&reg; (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing) is is a
-specification for a set of compiler directives, library routines, and
-environment variables that can be used to specify shared memory parallelism in
-Fortran and C/C++ programs.</p>
+<p>OpenMP® (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing) is is a specification
+for a set of compiler directives, library routines, and environment variables
+that can be used to specify shared memory parallelism in Fortran and C/C++
+programs.</p>
 
 <p>This project implements OpenMP support in the <a
 href="http://clang.llvm.org/">Clang</a> C language family frontend for the <a
@@ -64,8 +64,8 @@ $ git clone -b clang-omp https://github.com/clang-omp/compiler-rt llvm/projects/
 
 <p>The source code structure follows Clang/LLVM: <a
 href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
-Also you need to get and build an <a
-href="http://www.openmprtl.org/">Intel&reg; OpenMP* Runtime Library</a>.</p>
+Also you need to get and build an <a href="http://www.openmprtl.org/">Intel®
+OpenMP* Runtime Library</a>.</p>
 
 <h2><a name="building" class="anchor" href="#building"><span
 class="octicon octicon-link"></span></a>Building</h2>
@@ -86,7 +86,7 @@ export CPLUS_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$C
 export LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRARY_PATH</code></pre>
 
-<p>When you build a program that uses OpenMP&reg;, add the following options to
+<p>When you build a program that uses OpenMP®, add the following options to
 enable OpenMP support and link to the runtime library.</p>
 <pre><code>-Xclang -fopenmp -liomp5</code></pre>
 
@@ -137,11 +137,15 @@ class="octicon octicon-link"></span></a>Status</h2>
 href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP 3.1</a> and some
 elements of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
 4.0</a> are implemented . This implementation relies on Intel OpenMP API, and
-should be used along with Intel&reg; OpenMP* Runtime Library that supports such
-API (available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>).
-</p>
+should be used along with Intel® OpenMP* Runtime Library that supports such API
+(available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>). </p>
 
 <p>The following openly available OpenMP test suites pass: TODO. </p>
+
+<h2>Attention!</h2>
+
+<p>This is very pleminary version with a lot of hacks and this is not a final
+version. We plan code refactoring before commit it into Clang/LLVM trunk.</p>
 
 <h2><a name="license" class="anchor" href="#license"><span
 class="octicon octicon-link"></span></a>License</h2>
@@ -169,7 +173,7 @@ href="https://github.com/clang-omp/clang/issues">here</a>.</p>
 <div id="footer_wrap" class="outer">
 
 <div class="inner">
-<p class="inline">&copy; 2013 Intel Corporation.</p>
+<p class="inline">© 2013 Intel Corporation.</p>
 <ul class="footer_list">
   <li class="footer_li"><a
     href="http://software.intel.com/en-us/articles/optimization-notice">Optimization
