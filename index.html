@@ -1,827 +1,124 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
-xmlns="http://www.w3.org/TR/REC-html40">
-
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 14">
-<meta name=Originator content="Microsoft Word 14">
-<link rel=File-List href="index_files/filelist.xml">
-<link rel=Edit-Time-Data href="index_files/editdata.mso">
-<!--[if !mso]>
-<style>
-v\:* {behavior:url(#default#VML);}
-o\:* {behavior:url(#default#VML);}
-w\:* {behavior:url(#default#VML);}
-.shape {behavior:url(#default#VML);}
-</style>
-<![endif]-->
-<title>OpenMP/Clang</title>
-<!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Author>Cownie, James H</o:Author>
-  <o:LastAuthor>Cownie, James H</o:LastAuthor>
-  <o:Revision>3</o:Revision>
-  <o:TotalTime>7</o:TotalTime>
-  <o:Created>2013-08-22T14:34:00Z</o:Created>
-  <o:LastSaved>2013-08-22T14:41:00Z</o:LastSaved>
-  <o:Pages>2</o:Pages>
-  <o:Words>806</o:Words>
-  <o:Characters>4600</o:Characters>
-  <o:Company>Intel Corporation</o:Company>
-  <o:Lines>38</o:Lines>
-  <o:Paragraphs>10</o:Paragraphs>
-  <o:CharactersWithSpaces>5396</o:CharactersWithSpaces>
-  <o:Version>14.00</o:Version>
- </o:DocumentProperties>
- <o:OfficeDocumentSettings>
-  <o:AllowPNG/>
- </o:OfficeDocumentSettings>
-</xml><![endif]-->
-<link rel=themeData href="index_files/themedata.thmx">
-<link rel=colorSchemeMapping href="index_files/colorschememapping.xml">
-<!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:TrackMoves>false</w:TrackMoves>
-  <w:TrackFormatting/>
-  <w:ValidateAgainstSchemas/>
-  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
-  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
-  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
-  <w:DoNotPromoteQF/>
-  <w:LidThemeOther>EN-GB</w:LidThemeOther>
-  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
-  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
-  <w:Compatibility>
-   <w:BreakWrappedTables/>
-   <w:SplitPgBreakAndParaMark/>
-  </w:Compatibility>
-  <m:mathPr>
-   <m:mathFont m:val="Cambria Math"/>
-   <m:brkBin m:val="before"/>
-   <m:brkBinSub m:val="&#45;-"/>
-   <m:smallFrac m:val="off"/>
-   <m:dispDef/>
-   <m:lMargin m:val="0"/>
-   <m:rMargin m:val="0"/>
-   <m:defJc m:val="centerGroup"/>
-   <m:wrapIndent m:val="1440"/>
-   <m:intLim m:val="subSup"/>
-   <m:naryLim m:val="undOvr"/>
-  </m:mathPr></w:WordDocument>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
-  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
-  LatentStyleCount="267">
-  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
-  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
-  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
-  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
-  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
-  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
-  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
-  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Table Grid"/>
-  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
-  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 1"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
-  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
-  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
-  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
-  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 2"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 3"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 4"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 5"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 6"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
-  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
-  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
-  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
-  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
-  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
-  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
- </w:LatentStyles>
-</xml><![endif]-->
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;
-	mso-font-charset:2;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:0 268435456 0 0 -2147483648 0;}
-@font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;
-	mso-font-charset:2;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:0 268435456 0 0 -2147483648 0;}
-@font-face
-	{font-family:Consolas;
-	panose-1:2 11 6 9 2 2 4 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:modern;
-	mso-font-pitch:fixed;
-	mso-font-signature:-520092929 1073806591 9 0 415 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin:0cm;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Times New Roman","serif";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;}
-h1
-	{mso-style-priority:9;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-link:"Heading 1 Char";
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	mso-outline-level:1;
-	font-size:24.0pt;
-	font-family:"Times New Roman","serif";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;
-	font-weight:bold;}
-h2
-	{mso-style-priority:9;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-link:"Heading 2 Char";
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	mso-outline-level:2;
-	font-size:18.0pt;
-	font-family:"Times New Roman","serif";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;
-	font-weight:bold;}
-p
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Times New Roman","serif";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;}
-code
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	font-family:"Courier New";
-	mso-ascii-font-family:"Courier New";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;
-	mso-hansi-font-family:"Courier New";
-	mso-bidi-font-family:"Courier New";}
-pre
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-link:"HTML Preformatted Char";
-	margin:0cm;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
-	font-size:10.0pt;
-	font-family:"Courier New";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-priority:9;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:"Heading 1";
-	mso-ansi-font-size:14.0pt;
-	mso-bidi-font-size:14.0pt;
-	font-family:"Cambria","serif";
-	mso-ascii-font-family:Cambria;
-	mso-ascii-theme-font:major-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:major-fareast;
-	mso-hansi-font-family:Cambria;
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:"Times New Roman";
-	mso-bidi-theme-font:major-bidi;
-	color:#365F91;
-	mso-themecolor:accent1;
-	mso-themeshade:191;
-	font-weight:bold;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-noshow:yes;
-	mso-style-priority:9;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:"Heading 2";
-	mso-ansi-font-size:13.0pt;
-	mso-bidi-font-size:13.0pt;
-	font-family:"Cambria","serif";
-	mso-ascii-font-family:Cambria;
-	mso-ascii-theme-font:major-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:major-fareast;
-	mso-hansi-font-family:Cambria;
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:"Times New Roman";
-	mso-bidi-theme-font:major-bidi;
-	color:#4F81BD;
-	mso-themecolor:accent1;
-	font-weight:bold;}
-span.HTMLPreformattedChar
-	{mso-style-name:"HTML Preformatted Char";
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:"HTML Preformatted";
-	font-family:Consolas;
-	mso-ascii-font-family:Consolas;
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;
-	mso-hansi-font-family:Consolas;
-	mso-bidi-font-family:Consolas;}
-p.inline, li.inline, div.inline
-	{mso-style-name:inline;
-	mso-style-unhide:no;
-	font-size:12.0pt;
-	font-family:"Times New Roman","serif";
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
-span.GramE
-	{mso-style-name:"";
-	mso-gram-e:yes;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:72.0pt 72.0pt 72.0pt 72.0pt;
-	mso-header-margin:35.4pt;
-	mso-footer-margin:35.4pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
- /* List Definitions */
- @list l0
-	{mso-list-id:881088987;
-	mso-list-template-ids:-338142316;}
-@list l0:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:36.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-@list l0:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:72.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:"Courier New";
-	mso-bidi-font-family:"Times New Roman";}
-@list l0:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:108.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l0:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:144.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l0:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:180.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l0:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:216.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l0:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:252.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l0:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:288.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l0:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:324.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1
-	{mso-list-id:1518958338;
-	mso-list-template-ids:-1535723616;}
-@list l1:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:36.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-@list l1:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:72.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:"Courier New";
-	mso-bidi-font-family:"Times New Roman";}
-@list l1:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:108.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:144.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:180.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:216.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:252.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:288.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-@list l1:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:324.0pt;
-	mso-level-number-position:left;
-	text-indent:-18.0pt;
-	mso-ansi-font-size:10.0pt;
-	font-family:Wingdings;}
-ol
-	{margin-bottom:0cm;}
-ul
-	{margin-bottom:0cm;}
--->
-</style>
-<!--[if gte mso 10]>
-<style>
- /* Style Definitions */
- table.MsoNormalTable
-	{mso-style-name:"Table Normal";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-parent:"";
-	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
-	mso-para-margin:0cm;
-	mso-para-margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:10.0pt;
-	font-family:"Times New Roman","serif";}
-</style>
-<![endif]-->
-<meta http-equiv=X-UA-Compatible content="chrome=1">
-<meta name=description
-content="OpenMP/Clang : An implementation of the OpenMP® C/C++ language extensions in Clang/LLVM compiler ">
-<link rel=stylesheet type="text/css" media=screen
-href="stylesheets/stylesheet.css">
-<!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="1026"/>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <o:shapelayout v:ext="edit">
-  <o:idmap v:ext="edit" data="1"/>
- </o:shapelayout></xml><![endif]-->
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="description"
+  content="OpenMP/Clang : An implementation of the OpenMP® C/C++ language extensions in Clang/LLVM compiler ">
+  <link rel="stylesheet" type="text/css" media="screen"
+  href="stylesheets/stylesheet.css">
+  <title>OpenMP/Clang</title>
 </head>
 
-<body lang=EN-GB link=blue vlink=purple style='tab-interval:36.0pt'>
+<body>
+<!-- HEADER -->
 
-<div class=WordSection1>
+<div id="header_wrap" class="outer">
+<header class=inner><a id="forkme_banner"
+href="https://github.com/clang-omp?tab=repositories">View on GitHub</a> 
 
-<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><a
-href="https://github.com/clang-omp?tab=repositories">View on <span
-class=SpellE>GitHub</span></a> <o:p></o:p></span></p>
+<h1 id="project_title">OpenMP/Clang</h1>
 
-<h1><span style='mso-fareast-font-family:"Times New Roman"'>OpenMP®/Clang<o:p></o:p></span></h1>
+<h2 id="project_tagline">An implementation of the OpenMP® C/C++ language
+extensions in Clang/LLVM compiler </h2>
 
-<h2 id="project_tagline"><span style='mso-fareast-font-family:"Times New Roman"'>An
-implementation of the OpenMP C/C++ language extensions in Clang/LLVM compiler <o:p></o:p></span></h2>
+<div id="downloads">
+<a class="nav_link" href="#try-openmp-clang">Try it!</a> <a class="nav_link"
+href="#contribute">Contribute</a> <a class="nav_link" href="#status">Status</a>
+<a class="nav_link" href="#license">License</a> <a class="nav_link"
+href="#contact">Contact</a> </div>
+</header></div>
+<!-- MAIN CONTENT -->
 
-<div id=downloads>
-
-<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><a
-href="#try-openmp-clang">Try it!</a> <a href="#contribute">Contribute</a> <a
-href="#status">Status</a> <a href="#license">License</a> <a href="#contact">Contact</a>
-<o:p></o:p></span></p>
-
-</div>
-
-</header><!-- MAIN CONTENT --><section id=main_content class=inner>
-
-<div id="main_content_wrap">
-
-<p>The OpenMP (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing) standard is a
-specification for a set of compiler directives, library routines, and
-environment variables that can be used to describe shared memory parallelism in
-<span class=GramE>Fortran</span> and C/C++ programs.</p>
+<div id="main_content_wrap" class="outer">
+<section id=main_content class=inner>
+<p>OpenMP® (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing) is a specification for
+a set of compiler directives, library routines, and environment variables that
+can be used to specify shared memory parallelism in Fortran and C/C++
+programs.</p>
 
 <p>This project implements OpenMP support in the <a
 href="http://clang.llvm.org/">Clang</a> C language family frontend for the <a
-href="http://llvm.org/">LLVM</a> compiler. The current scope of the project is to
-provide support for the <a
-href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP 3.1</a>
-specification.</p>
+href="http://llvm.org/">LLVM</a> compiler. Current scope of the project is
+support for <a href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP
+3.1</a> specification.</p>
 
-<p>We plan to eventually contribute this implementation to the Clang trunk; the
-first patches have already been committed. In the meantime, you are welcome to
-try (and contribute to!) the full OpenMP 3.1 implementation hosted here.</p>
+<p>We plan to eventually contribute this implementation to Clang trunk; first
+patches were already committed. In the meantime, you are welcome to try (and
+contribute to!) the full OpenMP 3.1 implementation hosted here.</p>
 
-<h1><a name=news></a><span style='mso-fareast-font-family:"Times New Roman"'>News<o:p></o:p></span></h1>
+<h1><a name="news" class="anchor" href="#news"><span
+class="octicon octicon-link"></span></a>News</h1>
 
-<p>-.-<span class=GramE>.-</span> Initial release.</p>
+<p>-.-.- Initial release.</p>
 
-<h1><a name=try-openmp-clang></a><span style='mso-fareast-font-family:"Times New Roman"'>Try
-OpenMP/Clang<o:p></o:p></span></h1>
+<h1><a name="try-openmp-clang" class="anchor" href="#try-openmp-clang"><span
+class="octicon octicon-link"></span></a>Try OpenMP/Clang</h1>
 
-<h2><a name=getting-the-source-code></a><span style='mso-fareast-font-family:
-"Times New Roman"'>Getting the source code<o:p></o:p></span></h2>
-
-<pre><code>$ <span class=GramE>git</span> clone -b clang-<span class=SpellE>omp</span> https://github.com/clang-omp/llvm<o:p></o:p></code></pre><pre><code>$ <span
-class=GramE>git</span> clone -b clang-<span class=SpellE>omp</span> https://github.com/clang-omp/clang <span
-class=SpellE>llvm</span>/tools/clang<o:p></o:p></code></pre><pre><code>$ <span
-class=GramE>git</span> clone -b clang-<span class=SpellE>omp</span> https://github.com/clang-omp/compiler-rt <span
-class=SpellE>llvm</span>/projects/compiler-<span class=SpellE>rt</span></code></pre>
+<h2><a name="getting-the-source-code" class="anchor"
+href="#getting-the-source-code"><span
+class="octicon octicon-link"></span></a>Getting the source code</h2>
+<pre><code>$ git clone -b clang-omp https://github.com/clang-omp/llvm
+$ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang
+$ git clone -b clang-omp https://github.com/clang-omp/compiler-rt llvm/projects/compiler-rt</code></pre>
 
 <p>The source code structure follows Clang/LLVM: <a
 href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
 Also you need to get and build an <a href="http://www.openmprtl.org/">Intel®
 OpenMP* Runtime Library</a>.</p>
 
-<h2><a name=building></a><span style='mso-fareast-font-family:"Times New Roman"'>Building<o:p></o:p></span></h2>
+<h2><a name="building" class="anchor" href="#building"><span
+class="octicon octicon-link"></span></a>Building</h2>
 
 <p>To build clang with OpenMP 3.1 support just follow standard building
 procedure of clang/LLVM compiler (see <a
 href="http://clang.llvm.org/get_started.html">Getting Started: Building and
 Running Clang</a>).</p>
 
-<h2><a name=using></a><span style='mso-fareast-font-family:"Times New Roman"'>Using<o:p></o:p></span></h2>
+<h2><a name="using" class="anchor" href="#using"><span
+class="octicon octicon-link"></span></a>Using</h2>
 
 <p>To use the newly installed compiler, add the following to your environment.
 On Mac OS X, replace LD_LIBRARY_PATH with DYLD_LIBRARY_PATH.</p>
+<pre><code>export PATH=/install/prefix/bin:$PATH
+export C_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$CPLUS_INCLUDE_PATH
+export LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRARY_PATH</code></pre>
 
-<pre><span class=GramE><code>export</code></span><code> PATH=/install/prefix/bin:$PATH<o:p></o:p></code></pre><pre><span
-class=GramE><code>export</code></span><code> C_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$C_INCLUDE_PATH<o:p></o:p></code></pre><pre><span
-class=GramE><code>export</code></span><code> CPLUS_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$CPLUS_INCLUDE_PATH<o:p></o:p></code></pre><pre><span
-class=GramE><code>export</code></span><code> LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LIBRARY_PATH<o:p></o:p></code></pre><pre><span
-class=GramE><code>export</code></span><code> LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRARY_PATH</code></pre>
+<p>When you build a program that uses OpenMP®, add the following options to
+enable OpenMP support and link to the runtime library.</p>
+<pre><code>-Xclang -fopenmp -liomp5</code></pre>
 
-<p>When you build a program that uses OpenMP syntax, add the following options
-to enable OpenMP support and link to the runtime library.</p>
+<h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
+class="octicon octicon-link"></span></a>A simple example</h2>
+<script type="text/javascript"
+src="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204.js">
+</script>
 
-<pre><code>-<span class=SpellE>Xclang</span> -<span class=SpellE>fopenmp</span> -liomp5</code></pre>
+<p>Confirm that the compiler is working correctly by saving the above code code
+to a file.</p>
+<pre><code>$ clang -Xclang -fopenmp -liomp5 OpenMP.c -o OpenMP
+$ ./OpenMP</code></pre>
 
-<h2><a name=a-simple-example></a><span style='mso-fareast-font-family:"Times New Roman"'>A
-simple example<o:p></o:p></span></h2>
-
-<p><span style='mso-fareast-font-family:"Times New Roman"'><script  type="text/javascript" src="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204.js">
-</script></span>Confirm that the compiler is working correctly by saving the
-above code <span class=SpellE>code</span> to a file.</p>
-
-<pre><code>$ <span class=GramE>clang</span> -<span class=SpellE>Xclang</span> -<span
-class=SpellE>fopenmp</span> -liomp5 <span class=SpellE>OpenMP.c</span> -o OpenMP<o:p></o:p></code></pre><pre><span
-class=GramE><code>$ ./</code></span><code>OpenMP</code></pre>
-
-<h2><a name=supported-platforms></a><span style='mso-fareast-font-family:"Times New Roman"'>Supported
-platforms<o:p></o:p></span></h2>
+<h2><a name="supported-platforms" class="anchor"
+href="#supported-platforms"><span
+class="octicon octicon-link"></span></a>Supported platforms</h2>
 
 <p>OS: Linux or Mac OS X<br>
 Architecture: x86-64</p>
 
-<h2><a name=known-issues></a><span style='mso-fareast-font-family:"Times New Roman"'>Known
-issues<o:p></o:p></span></h2>
-
-<ul type=disc>
- <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
-     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
-     "Times New Roman"'>Using variable-length arrays in an OpenMP region does
-     not work yet.<o:p></o:p></span></li>
+<h2><a name="known-issues" class="anchor" href="#known-issues"><span
+class="octicon octicon-link"></span></a>Known issues</h2>
+<ul>
+  <li>Using variable-length arrays in a OpenMP regions does not work yet.</li>
 </ul>
 
-<h2><a name=contribute></a><span style='mso-fareast-font-family:"Times New Roman"'>Contribute<o:p></o:p></span></h2>
+<h2><a name="contribute" class="anchor" href="#contribute"><span
+class="octicon octicon-link"></span></a>Contribute</h2>
 
-<p>We welcome contributions of all kinds: patches, code reviews, testing and bug
-reports.</p>
+<p>We welcome contributions of all kinds: patches, code reviews, testing and
+bug reports.</p>
 
 <p>However, as any other open source project, we have to maintain some level of
 control to prevent complete chaos and keep a single architectural direction.
@@ -833,68 +130,59 @@ members of Clang/LLVM community. </p>
 where it will be governed by existing Clang/LLVM community development
 policies. </p>
 
-<h2><a name=status></a><span style='mso-fareast-font-family:"Times New Roman"'>Status<o:p></o:p></span></h2>
+<h2><a name="status" class="anchor" href="#status"><span
+class="octicon octicon-link"></span></a>Status</h2>
 
-<p>Full support for <a href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP
-3.1</a> and some elements of <a
-href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP 4.0</a> are <span
-class=GramE>implemented .</span> This implementation relies on Intel OpenMP
-API, and should be used along with Intel® OpenMP* Runtime Library that supports
-such API (available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>).
-</p>
+<p>Full support for <a
+href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP 3.1</a> and some
+elements of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
+4.0</a> are implemented . This implementation relies on Intel OpenMP API, and
+should be used along with Intel® OpenMP* Runtime Library that supports such API
+(available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>). </p>
 
 <p>The following openly available OpenMP test suites pass: TODO. </p>
 
-<h2><span style='mso-fareast-font-family:"Times New Roman"'>Attention!<o:p></o:p></span></h2>
+<h2>Attention!</h2>
 
-<p>This is very preliminary version with a lot of hacks and is definitely not a
-final version. We plan code refactoring before we commit it into the Clang/LLVM
-trunk.</p>
+<p>This is very pleminary version with a lot of hacks and this is not a final
+version. We plan code refactoring before commit it into Clang/LLVM trunk.</p>
 
-<h2><a name=license></a><span style='mso-fareast-font-family:"Times New Roman"'>License<o:p></o:p></span></h2>
+<h2><a name="license" class="anchor" href="#license"><span
+class="octicon octicon-link"></span></a>License</h2>
 
-<p><strong>LLVM</strong>, <strong>Clang</strong>, and <strong>Compiler-<span
-class=SpellE>rt</span></strong> are distributed under LLVM's <a
+<p><strong>LLVM</strong>, <strong>Clang</strong>, and
+<strong>Compiler-rt</strong> are distributed under LLVM's <a
 href="http://llvm.org/docs/DeveloperPolicy.html#license">the University of
 Illinois/NCSA Open Source License</a>. In addition to the <a
-href="http://www.opensource.org/licenses/UoI-NCSA.php">&quot;UIUC&quot;
-BSD-Style license</a> <span class=SpellE>license</span>, the runtime library
-component of LLVM (<span class=SpellE><strong>Compiler_rt</strong></span>) is
-also licensed under the <a
+href="http://www.opensource.org/licenses/UoI-NCSA.php">"UIUC" BSD-Style
+license</a> license, the runtime library component of LLVM
+(<strong>Compiler_rt</strong>) is also licensed under the <a
 href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. For
 details, including information about third-party components, see LICENSE.txt in
 the code repositories.</p>
 
-<h2><a name=contact></a><span style='mso-fareast-font-family:"Times New Roman"'>Contact<o:p></o:p></span></h2>
+<h2><a name="contact" class="anchor" href="#contact"><span
+class="octicon octicon-link"></span></a>Contact</h2>
 
 <p>If you would like to report a bug, or make a feature request, you can submit
-an issue in <span class=SpellE>Github</span> <a
-href="https://github.com/clang-omp/clang/issues">here</a>.<o:p></o:p></p>
+an issue in Github <a
+href="https://github.com/clang-omp/clang/issues">here</a>.</p>
+</section></div>
+<!-- FOOTER -->
 
-</div>
+<div id="footer_wrap" class="outer">
 
-</section><!-- FOOTER -->
-
-<div id="footer_wrap">
-
-<div>
-
-<p class=inline>© 2013 Intel Corporation.</p>
-
-<ul type=disc>
- <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
-     mso-list:l1 level1 lfo2;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
-     "Times New Roman"'><a
-     href="http://software.intel.com/en-us/articles/optimization-notice">Optimization
-     Notice</a><o:p></o:p></span></li>
- <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
-     mso-list:l1 level1 lfo2;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
-     "Times New Roman"'><a
-     href="http://www.intel.com/sites/corporate/tradmarx.htm">Legal Information</a><o:p></o:p></span></li>
- <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
-     mso-list:l1 level1 lfo2;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
-     "Times New Roman"'><a
-     href="http://www.intel.com/content/www/us/en/privacy/intel-online-privacy-notice-summary.html">Privacy</a><o:p></o:p></span></li>
+<div class="inner">
+<p class="inline">© 2013 Intel Corporation.</p>
+<ul class="footer_list">
+  <li class="footer_li"><a
+    href="http://software.intel.com/en-us/articles/optimization-notice">Optimization
+    Notice</a></li>
+  <li class="footer_li"><a
+    href="http://www.intel.com/sites/corporate/tradmarx.htm">Legal
+    Information</a></li>
+  <li class="footer_li"><a
+    href="http://www.intel.com/content/www/us/en/privacy/intel-online-privacy-notice-summary.html">Privacy</a></li>
 </ul>
 
 <p>Intel is a trademark of Intel Corporation in the U.S. and/or other
@@ -902,13 +190,7 @@ countries.</p>
 
 <p>Slate theme maintained by <a href="https://github.com/jsncostello">Jason
 Costello</a></p>
-
 </div>
-
 </div>
-
-</div>
-
 </body>
-
 </html>
