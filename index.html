@@ -32,21 +32,21 @@ href="#contact">Contact</a> </div>
 
 <div id="main_content_wrap" class="outer">
 <section id=main_content class=inner>
-<p>The OpenMP (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing)
-  specification is a standard for
-a set of compiler directives, library routines, and environment variables that
-can be used to specify shared memory parallelism in Fortran and C/C++
-programs.</p>
+<p>The OpenMP (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing) specification is a
+standard for a set of compiler directives, library routines, and environment
+variables that can be used to specify shared memory parallelism in Fortran and
+C/C++ programs.</p>
 
 <p>This project implements OpenMP support in the <a
 href="http://clang.llvm.org/">Clang</a> C language family frontend for the <a
-href="http://llvm.org/">LLVM</a> compiler. The current scope of the
-  project is to support the <a href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP
-3.1</a> specification.</p>
+href="http://llvm.org/">LLVM</a> compiler. The current scope of the project is
+to support the <a
+href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP 3.1</a>
+specification.</p>
 
-<p>We plan eventually to contribute this implementation to the Clang trunk; initial
-patches have already been committed. In the meantime, you are welcome to try (and
-contribute to!) the full OpenMP 3.1 implementation hosted here.</p>
+<p>We plan eventually to contribute this implementation to the Clang trunk;
+initial patches have already been committed. In the meantime, you are welcome
+to try (and contribute to!) the full OpenMP 3.1 implementation hosted here.</p>
 
 <h1><a name="news" class="anchor" href="#news"><span
 class="octicon octicon-link"></span></a>News</h1>
@@ -59,20 +59,20 @@ class="octicon octicon-link"></span></a>Try OpenMP/Clang</h1>
 <h2><a name="getting-the-source-code" class="anchor"
 href="#getting-the-source-code"><span
 class="octicon octicon-link"></span></a>Getting the source code</h2>
-<pre><code>$ git clone -b clang-omp https://github.com/clang-omp/llvm
-$ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang
+<pre><code>$ git clone https://github.com/clang-omp/llvm
+$ git clone https://github.com/clang-omp/clang llvm/tools/clang
 $ git clone -b clang-omp https://github.com/clang-omp/compiler-rt llvm/projects/compiler-rt</code></pre>
 
 <p>The source code structure follows Clang/LLVM: <a
 href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
-To run (rather than just compile) code you need to get and build an <a href="http://www.openmprtl.org/">Intel®
-OpenMP* Runtime Library</a>.</p>
+To run (rather than just compile) code you need to get and build an <a
+href="http://www.openmprtl.org/">Intel® OpenMP* Runtime Library</a>.</p>
 
 <h2><a name="building" class="anchor" href="#building"><span
 class="octicon octicon-link"></span></a>Building</h2>
 
-<p>To build clang with OpenMP 3.1 support just follow the clang/LLVM
-  compiler's standard build procedure (see <a
+<p>To build clang with OpenMP 3.1 support just follow the clang/LLVM compiler's
+standard build procedure (see <a
 href="http://clang.llvm.org/get_started.html">Getting Started: Building and
 Running Clang</a>).</p>
 
@@ -87,8 +87,8 @@ export CPLUS_INCLUDE_PATH=/install/prefix/include:&lt;OpenMP include path&gt;:$C
 export LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRARY_PATH</code></pre>
 
-<p>When you build a program that uses OpenMP directives, add the following options to
-enable OpenMP support and link to the runtime library.</p>
+<p>When you build a program that uses OpenMP directives, add the following
+options to enable OpenMP support and link to the runtime library.</p>
 <pre><code>-Xclang -fopenmp -liomp5</code></pre>
 
 <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
@@ -97,8 +97,8 @@ class="octicon octicon-link"></span></a>A simple example</h2>
 src="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204.js">
 </script>
 
-<p>Confirm that the compiler is working correctly by saving the above code 
-to a file.</p>
+<p>Confirm that the compiler is working correctly by saving the above code to a
+file.</p>
 <pre><code>$ clang -Xclang -fopenmp -liomp5 OpenMP.c -o OpenMP
 $ ./OpenMP</code></pre>
 
@@ -127,8 +127,8 @@ You can send your patches to Alexey Bataev (project admin) for review and
 commit; also, we are very open with granting commit access rights to recognized
 members of Clang/LLVM community. </p>
 
-<p>We plan eventually to contribute this OpenMP implementation to the Clang trunk,
-where it will be governed by existing Clang/LLVM community development
+<p>We plan eventually to contribute this OpenMP implementation to the Clang
+trunk, where it will be governed by existing Clang/LLVM community development
 policies. </p>
 
 <h2><a name="status" class="anchor" href="#status"><span
@@ -137,17 +137,18 @@ class="octicon octicon-link"></span></a>Status</h2>
 <p>Full support for <a
 href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP 3.1</a> and some
 elements of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
-4.0</a> are implemented. This implementation relies on the Intel OpenMP API, and
-should be used along with Intel® OpenMP* Runtime Library that supports that API
-(available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>). </p>
+4.0</a> are implemented. This implementation relies on the Intel OpenMP API,
+and should be used along with Intel® OpenMP* Runtime Library that supports that
+API (available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>).
+</p>
 
 <p>The following openly available OpenMP test suites pass: TODO. </p>
 
 <h2>Attention!</h2>
 
-<p>This is very preliminary version with a lot of hacks and is
-  certainly not a final, production version. We plan code refactoring
-  before it is committed to the Clang/LLVM trunk.</p>
+<p>This is very preliminary version with a lot of hacks and is certainly not a
+final, production version. We plan code refactoring before it is committed to
+the Clang/LLVM trunk.</p>
 
 <h2><a name="license" class="anchor" href="#license"><span
 class="octicon octicon-link"></span></a>License</h2>
