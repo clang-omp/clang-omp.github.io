@@ -7,7 +7,7 @@
   content="OpenMP/Clang: An implementation of the OpenMP(R) C/C++ language extensions in Clang/LLVM compiler ">
   <link rel="stylesheet" type="text/css" media="screen"
   href="stylesheets/stylesheet.css">
-  <title>OpenMP&reg;/Clang</title>
+  <title>OpenMP®/Clang</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 <header class=inner><a id="forkme_banner"
 href="https://github.com/clang-omp?tab=repositories">View on GitHub</a> 
 
-<h1 id="project_title">OpenMP&reg;/Clang</h1>
+<h1 id="project_title">OpenMP®/Clang</h1>
 
 <h2 id="project_tagline">An implementation of the OpenMP C/C++ language
 extensions in Clang/LLVM compiler </h2>
@@ -66,7 +66,7 @@ $ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang</co
 <p>The source code structure follows Clang/LLVM: <a
 href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
 To run (rather than just compile) code you need to get and build an <a
-href="http://www.openmprtl.org/">Intel&reg; OpenMP* Runtime Library</a>.</p>
+href="http://www.openmprtl.org/">Intel® OpenMP* Runtime Library</a>.</p>
 
 <h2><a name="building" class="anchor" href="#building"><span
 class="octicon octicon-link"></span></a>Building</h2>
@@ -89,7 +89,7 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
 
 <p>When you build a program that uses OpenMP directives, add the following
 options to enable OpenMP support and link to the runtime library.</p>
-<pre><code>-Xclang -fopenmp -liomp5</code></pre>
+<pre><code>-fopenmp</code></pre>
 
 <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
 class="octicon octicon-link"></span></a>A simple example</h2>
@@ -99,7 +99,7 @@ src="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204.js">
 
 <p>Confirm that the compiler is working correctly by saving the above code to a
 file.</p>
-<pre><code>$ clang -Xclang -fopenmp -liomp5 OpenMP.c -o OpenMP
+<pre><code>$ clang -fopenmp OpenMP.c -o OpenMP
 $ ./OpenMP</code></pre>
 
 <h1><a name="contribute" class="anchor" href="#contribute"><span
@@ -125,7 +125,7 @@ class="octicon octicon-link"></span></a>Status</h1>
 href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP 3.1</a> and some
 elements of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
 4.0</a> are implemented. This implementation relies on the Intel OpenMP API,
-and should be used along with Intel&reg; OpenMP* Runtime Library that supports that
+and should be used along with Intel® OpenMP* Runtime Library that supports that
 API (available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>).
 </p>
 
@@ -148,20 +148,19 @@ class="octicon octicon-link"></span></a>Known issues</h2>
   <li>Using variable-length arrays in an OpenMP region does not yet work.</li>
 </ul>
 
-<p> </p>
+<p></p>
 
 <h2>Important Note</h2>
 
 <p>Please note that this is a preliminary version. While everything is
 carefully tested and works fine, there are known internal design quality
 issues. We plan to refacture some parts of the code before submitting them to
-Clang trunk. And yes, any help with this would be appreciated!
-<p>
-Among known design issues are:
+Clang trunk. And yes, any help with this would be appreciated! </p>
+
+<p>Among known design issues are: </p>
 <ul>
-<li>FIXME</li>
+  <li>FIXME</li>
 </ul>
-</p>
 
 <h1><a name="license" class="anchor" href="#license"><span
 class="octicon octicon-link"></span></a>License</h1>
@@ -189,7 +188,7 @@ href="https://github.com/clang-omp/clang/issues">here</a>.</p>
 <div id="footer_wrap" class="outer">
 
 <div class="inner">
-<p class="inline">&copy; 2013 Intel Corporation.</p>
+<p class="inline">© 2013 Intel Corporation.</p>
 <ul class="footer_list">
   <li class="footer_li"><a
     href="http://software.intel.com/en-us/articles/optimization-notice">Optimization
