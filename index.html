@@ -129,7 +129,7 @@ $ ./hello</code></pre>
           <li>Combined constructs (<code>#pragma omp parallel for</code> and <code>#pragma
               omp parallel sections</code>). Currently these constructs are
             represented as a pair of <code>#pragma omp parallel</code> and <code>#pragma
-              omp for/sections</code> constructs. These solution leads to ugly
+              omp for/sections</code> constructs. This solution leads to ugly
             representation in AST because of the troubles with the variables
             capturing.</li>
           <li>Calculation of iteration indices for <code>#pragma omp for</code>
