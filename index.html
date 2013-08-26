@@ -69,20 +69,29 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
         <pre><code>-fopenmp</code></pre>
         <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
               class="octicon octicon-link"></span></a>A simple example</h2>
-        <script type="text/javascript" src="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204.js">
-</script> <p>Confirm that the compiler is working correctly by saving the above
+        <script src="https://gist.github.com/clang-omp/638a40f3a797315661d6.js"></script>
+        <p>Confirm that the compiler is working correctly by saving the above
           code to a file.</p>
-        <pre><code>$ clang -fopenmp OpenMP.c -o OpenMP
-$ ./OpenMP</code></pre>
+        <pre><code>$ clang -fopenmp hello.c -o hello
+$ ./hello</code></pre>
+        <p>Compilation should proceed with no errors or warnings.</p>
+        <p>Execute the output <code>./hello</code>. You should see more than
+          one &ldquo;Hello&rdquo; line
+          with different thread numbers. Note that the lines may be mixed
+          together.<br>
+          If you see only one, try setting the environment variable <span style="font-weight: bold;">OMP_NUM_THREADS</span>
+          to some number (say 4) and try again.</p>
+        <p>If you would like to see performance impact, you can try to compile
+          and execute more complex example <a href="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204">Matrices
+            Multiplication</a>.</p>
         <h1><a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a>Contribute</h1>
         <p>We welcome contributions of all kinds: patches, code reviews, testing
           and bug reports.</p>
         <p>However, as any other open source project, we have to maintain some
           level of control to prevent complete chaos and keep a single
-          architectural direction. You can send your patches to <a href="https://github.com/clang-omp/clang/issues">Alexey
-            Bataev</a> (project admin) for review and commit; also, we are very
-          open with granting commit access rights to recognized members of
-          Clang/LLVM community. </p>
+          architectural direction. You can send your patches <a href="https://github.com/clang-omp/clang/issues">here</a>
+          for review and commit; also, we are very open with granting commit
+          access rights to recognized members of Clang/LLVM community. </p>
         <p>We plan eventually to contribute this OpenMP implementation to the
           Clang trunk, where it will be governed by existing Clang/LLVM
           community development policies. </p>
