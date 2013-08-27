@@ -9,8 +9,7 @@
     <meta content="Intel Corporation" name="author">
     <meta content="clang, LLVM, OpenMP" name="keywords">
   </head>
-  <body>
-    <!-- HEADER -->
+  <body> <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner"><a id="forkme_banner" href="https://github.com/clang-omp?tab=repositories">View
           on GitHub</a>
@@ -81,9 +80,9 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
 $ ./hello</code></pre>
         <p>Compilation should proceed with no errors or warnings.</p>
         <p>Execute the output <code>./hello</code>. You should see more than
-          one &ldquo;Hello&rdquo; line
-          with different thread numbers. Note that the lines may be mixed
-          together. If you see only one, try setting the environment variable <span style="font-weight: bold;">OMP_NUM_THREADS</span>
+          one &ldquo;Hello&rdquo; line with different thread numbers. Note that
+          the lines may be mixed together. If you see only one, try setting the
+          environment variable <span style="font-weight: bold;">OMP_NUM_THREADS</span>
           to some number (say 4) and try again.</p>
         <p>If you would like to see performance impact, you can try to compile
           and execute a more complex example <a href="https://gist.github.com/clang-omp/89efe59c6f79ae2bc204">Matrices
@@ -143,8 +142,8 @@ $ ./hello</code></pre>
           <li>Analysis of atomic constructs and loops should be reworked for
             better diagnostics and readability.</li>
         </ul>
-        Also, please note that this development is based on latest released clang (3.3), not what is
-        currently under development in clang trunk.
+        Also, please note that this development is based on latest released
+        clang (3.3), not what is currently under development in clang trunk.
         <h1><a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
         <p><strong>LLVM</strong>, <strong>Clang</strong>, and <strong>Compiler-rt</strong>
           are distributed under LLVM's <a href="http://llvm.org/docs/DeveloperPolicy.html#license">the
@@ -176,5 +175,15 @@ $ ./hello</code></pre>
             Costello</a></p>
       </div>
     </div>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43518614-1', 'clang-omp.github.io');
+  ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
