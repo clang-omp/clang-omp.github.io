@@ -36,7 +36,7 @@
             4.0</a> specification.</p>
         <p>We plan eventually to contribute this implementation to the Clang
           trunk; initial patches have already been committed. In the meantime,
-          you are welcome to try (and contribute to!) the full OpenMP 3.1
+          you are welcome to try (and contribute to!) the OpenMP 4.0
           implementation hosted here.</p>
         <h1><a name="news" class="anchor" href="#news"><span class="octicon octicon-link"></span></a>News</h1>
         <p>August 23, 2013 - Initial release.<br>
@@ -45,7 +45,9 @@
             declare reduction</code> directives.<br>
           December 6, 2013 - Added support of variable length arrays in OpenMP
           constructs.<br>
-          February 6, 2014 - Upgrade to clang/llvm 3.4.</p>
+          February 6, 2014 - Upgrade to clang/llvm 3.4.<br>
+          March 14, 2014 - Added support of <code>depend</code> clause in <code>omp
+            task</code>directive.</p>
         <h1><a name="try-openmp-clang" class="anchor" href="#try-openmp-clang"><span
               class="octicon octicon-link"></span></a>Try OpenMP/Clang</h1>
         <h2><a name="getting-the-source-code" class="anchor" href="#getting-the-source-code"><span
@@ -102,11 +104,11 @@ $ ./hello</code></pre>
           community development policies. </p>
         <h1><a name="status" class="anchor" href="#status"><span class="octicon octicon-link"></span></a>Status</h1>
         <p>Full support for <a href="http://www.openmp.org/mp-documents/OpenMP3.1.pdf">OpenMP
-            3.1</a> and some elements of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
-            4.0</a> are implemented. This implementation relies on the Intel
-          OpenMP API, and should be used along with Intel&reg; OpenMP* Runtime
-          Library that supports that API (available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>).
-          </p>
+            3.1</a> and most of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
+            4.0</a> (except for offloading) are implemented. This implementation
+          relies on the Intel OpenMP API, and should be used along with
+          Intel&reg; OpenMP* Runtime Library that supports that API (available
+          from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>). </p>
         <p>The following openly available OpenMP test suites pass:</p>
         <ul>
           <li><a href="http://web.cs.uh.edu/%7Eopenuh/download/">OpenMP
@@ -116,7 +118,7 @@ $ ./hello</code></pre>
         <h2><a name="supported-platforms" class="anchor" href="#supported-platforms"><span
               class="octicon octicon-link"></span></a>Supported platforms</h2>
         <p>OS: Linux or Mac OS X<br>
-          Architecture: x86-64</p>
+          Architecture: x86, x86-64</p>
         <h2><a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known
           issues</h2>
         <ul>
