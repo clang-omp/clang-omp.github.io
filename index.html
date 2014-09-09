@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="OpenMP/Clang: An implementation of the OpenMP(R) C/C++ language extensions in Clang/LLVM compiler ">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>OpenMP&reg;/Clang</title>
+    <title>OpenMP®/Clang</title>
     <meta content="Intel Corporation" name="author">
     <meta content="clang, LLVM, OpenMP" name="keywords">
   </head>
@@ -14,7 +14,7 @@
     <div id="header_wrap" class="outer">
       <header class="inner"><a id="forkme_banner" href="https://github.com/clang-omp?tab=repositories">View
           on GitHub</a>
-        <h1 id="project_title">OpenMP&reg;/Clang</h1>
+        <h1 id="project_title">OpenMP®/Clang</h1>
         <h2 id="project_tagline">An implementation of the OpenMP C/C++ language
           extensions in Clang/LLVM compiler </h2>
         <div id="downloads"> <a class="nav_link" href="#try-openmp-clang">Try
@@ -40,7 +40,9 @@
           you are welcome to try (and contribute to!) the OpenMP 4.0
           implementation hosted here.</p>
         <h1><a name="news" class="anchor" href="#news"><span class="octicon octicon-link"></span></a>News</h1>
-        <p>June 10, 2014 - Initial support of <code>omp teams distribute [simd]</code>,<code>omp
+        <p>September 9, 2014 - Upgrade to clang/LLVM to 3.5, updated link to
+          LLVM OpenMP library.<br>
+          June 10, 2014 - Initial support of <code>omp teams distribute [simd]</code>,<code>omp
             target teams distribute [simd]</code>,<code>omp teams distribute
             parallel for [simd]</code>and <code>omp target teams distribute
             parallel for [simd]</code> directives (just parsing and semantic
@@ -73,7 +75,7 @@ $ git clone https://github.com/clang-omp/compiler-rt llvm/projects/compiler-rt
 $ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang</code></pre>
         <p>The source code structure follows Clang/LLVM: <a href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
           To run (rather than just compile) code you need to get and build an <a
-            href="http://www.openmprtl.org/">Intel&reg; OpenMP* Runtime Library</a>.</p>
+            href="http://openmp.llvm.org/">Intel® OpenMP* Runtime Library</a>.</p>
         <h2><a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
         <p>To build clang with OpenMP support just follow the clang/LLVM
           compiler's standard build procedure (see <a href="http://clang.llvm.org/get_started.html">Getting
@@ -104,8 +106,8 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
 $ ./hello</code></pre>
         <p>Compilation should proceed with no errors or warnings.</p>
         <p>Execute the output <code>./hello</code>. You should see more than
-          one &ldquo;Hello&rdquo; line with different thread numbers. Note that
-          the lines may be mixed together. If you see only one, try setting the
+          one &#8220;Hello&#8221; line with different thread numbers. Note that the lines
+          may be mixed together. If you see only one, try setting the
           environment variable <span style="font-weight: bold;">OMP_NUM_THREADS</span>
           to some number (say 4) and try again.</p>
         <p>If you would like to see performance impact, you can try to compile
@@ -127,7 +129,7 @@ $ ./hello</code></pre>
             3.1</a> and most of <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
             4.0</a> features (except for offloading) are implemented. This
           implementation relies on the Intel OpenMP API, and should be used
-          along with Intel&reg; OpenMP* Runtime Library that supports that API
+          along with Intel® OpenMP* Runtime Library that supports that API
           (available from <a href="http://www.openmprtl.org/">www.openmprtl.org</a>).
           </p>
         <p>The following openly available OpenMP test suites pass:</p>
@@ -139,7 +141,7 @@ $ ./hello</code></pre>
         <h2><a name="supported-platforms" class="anchor" href="#supported-platforms"><span
               class="octicon octicon-link"></span></a>Supported platforms</h2>
         <p>OS: Linux or Mac OS X<br>
-          Architecture: x86, x86-64</p>
+          Architecture: x86, x86-64, PowerPC, Arm</p>
         <h2><a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known
           issues</h2>
         <ul>
@@ -184,7 +186,7 @@ $ ./hello</code></pre>
     <!-- FOOTER -->
     <div id="footer_wrap" class="outer">
       <div class="inner">
-        <p class="inline">&copy; 2013-2014 Intel Corporation.</p>
+        <p class="inline">© 2013-2014 Intel Corporation.</p>
         <ul class="footer_list">
           <li class="footer_li"><a href="http://software.intel.com/en-us/articles/optimization-notice">Optimization
               Notice</a></li>
