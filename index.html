@@ -18,8 +18,7 @@
         <h2 id="project_tagline">An implementation of the OpenMP C/C++ language
           extensions in Clang/LLVM compiler </h2>
         <div id="downloads"> <a class="nav_link" href="#try-openmp-clang">Try
-            it!</a> <a class="nav_link" href="#contribute">Contribute</a> <a class="nav_link"
-
+            it!</a> <a class="nav_link" href="#contribute">Contribute</a> <a class="nav_link"
             href="#status">Status</a> <a class="nav_link" href="#license">License</a>
           <a class="nav_link" href="#contact">Contact</a> <a class="nav_link" href="https://github.com/clang-omp/clang/wiki">Wiki</a>
         </div>
@@ -41,8 +40,8 @@
           you are welcome to try (and contribute to!) the OpenMP 4.0
           implementation hosted here.</p>
         <h1><a name="news" class="anchor" href="#news"><span class="octicon octicon-link"></span></a>News</h1>
-        <p>September 9, 2014 - Upgrade to clang/LLVM 3.5, updated
-          link to LLVM OpenMP library.<br>
+        <p>September 9, 2014 - Upgrade to clang/LLVM 3.5, updated link to LLVM
+          OpenMP library.<br>
           June 10, 2014 - Initial support of <code>omp teams distribute [simd]</code>,<code>omp
             target teams distribute [simd]</code>,<code>omp teams distribute
             parallel for [simd]</code>and <code>omp target teams distribute
@@ -67,18 +66,15 @@
             declare reduction</code> directives.<br>
           September 27, 2013 - Added support of <code>proc_bind</code> clause.<br>
           August 23, 2013 - Initial release.</p>
-        <h1><a name="try-openmp-clang" class="anchor" href="#try-openmp-clang"><span
-
+        <h1><a name="try-openmp-clang" class="anchor" href="#try-openmp-clang"><span
               class="octicon octicon-link"></span></a>Try OpenMP/Clang</h1>
-        <h2><a name="getting-the-source-code" class="anchor" href="#getting-the-source-code"><span
-
+        <h2><a name="getting-the-source-code" class="anchor" href="#getting-the-source-code"><span
               class="octicon octicon-link"></span></a>Getting the source code</h2>
         <pre><code>$ git clone https://github.com/clang-omp/llvm
 $ git clone https://github.com/clang-omp/compiler-rt llvm/projects/compiler-rt
 $ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang</code></pre>
         <p>The source code structure follows Clang/LLVM: <a href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
-          To run (rather than just compile) code you need to get and build an <a
-
+          To run (rather than just compile) code you need to get and build an <a
             href="http://openmp.llvm.org/">Intel® OpenMP* Runtime Library</a>.</p>
         <h2><a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
         <p>To build clang with OpenMP support just follow the clang/LLVM
@@ -101,8 +97,7 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
           following options to enable OpenMP support and link to the runtime
           library.</p>
         <pre><code>-fopenmp</code></pre>
-        <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
-
+        <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
               class="octicon octicon-link"></span></a>A simple example</h2>
         <script src="https://gist.github.com/clang-omp/638a40f3a797315661d6.js"></script>
         <p>Confirm that the compiler is working correctly by saving the above
@@ -143,8 +138,7 @@ $ ./hello</code></pre>
               Validation Suite</a> by OpenUH Research Compiler - passed 119
             tests of 123.</li>
         </ul>
-        <h2><a name="supported-platforms" class="anchor" href="#supported-platforms"><span
-
+        <h2><a name="supported-platforms" class="anchor" href="#supported-platforms"><span
               class="octicon octicon-link"></span></a>Supported platforms</h2>
         <p>OS: Linux or Mac OS X<br>
           Architecture: x86, x86-64, PowerPC, Arm</p>
@@ -174,7 +168,7 @@ $ ./hello</code></pre>
             better diagnostics and readability.</li>
         </ul>
         Also, please note that this development is based on latest released
-        clang (3.4), not what is currently under development in clang trunk.
+        clang (3.5), not what is currently under development in clang trunk.
         <h1><a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
         <p><strong>LLVM</strong>, <strong>Clang</strong>, and <strong>Compiler-rt</strong>
           are distributed under LLVM's <a href="http://llvm.org/docs/DeveloperPolicy.html#license">the
@@ -216,8 +210,7 @@ $ ./hello</code></pre>
 
     </script>
       <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- clang-omp --> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-
+      <!-- clang-omp --> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
         data-ad-client="ca-pub-6146592403541671" data-ad-slot="7285847142"></ins>
       <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
