@@ -76,6 +76,11 @@ $ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang</co
         <p>The source code structure follows Clang/LLVM: <a href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
           To run (rather than just compile) code you need to get and build an <a
             href="http://openmp.llvm.org/">Intel® OpenMP* Runtime Library</a>.</p>
+        <p>Also you can try to use trunk-based version of the compiler
+          (supported by <a href="https://github.com/hfinkel">Hal Finkel</a>)</p>
+        <pre><code>$ git clone https://github.com/clang-omp/llvm_trunk llvm
+$ git clone https://github.com/clang-omp/compiler-rt_trunk llvm/projects/compiler-rt
+$ git clone https://github.com/clang-omp/clang_trunk llvm/tools/clang</code></pre>
         <h2><a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
         <p>To build clang with OpenMP support just follow the clang/LLVM
           compiler's standard build procedure (see <a href="http://clang.llvm.org/get_started.html">Getting
@@ -97,6 +102,32 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
           following options to enable OpenMP support and link to the runtime
           library.</p>
         <pre><code>-fopenmp</code></pre>
+        <h2><a name="using" class="anchor" href="file:///C:/Users/abataev/Documents/GitHub/clang-omp.github.io/index.html#using"><span
+              class="octicon octicon-link"></span></a>Using clang-omp with Xcode
+          (thanks to <a href="https://github.com/totalvoidness">Sebastian
+            Stenzel</a>)</h2>
+        <ol>
+          <li>Install clang-omp using <a href="http://brew.sh/">homebrew</a>: <code>brew
+              install clang-omp</code>.</li>
+          <li>Create a new Xcode project.</li>
+          <li>Under Build Settings
+            <ul>
+              <li>Add a new user-defined setting <span style="font-style: italic;">CC</span>
+                with the value <code>/usr/local/bin/clang-omp</code></li>
+              <li>Add <code>-fopenmp</code> to <em>Other C Flags</em></li>
+              <li>Add <code>/usr/local/include</code> to <em>Header Search
+                  Paths</em></li>
+            </ul>
+          </li>
+          <li>Under <em>Build Phases</em>
+            <ul>
+              <li>Add <code>/usr/local/lib/libiomp5.dylib</code> to <em>Link
+                  Binary With Libraries</em></li>
+            </ul>
+          </li>
+        </ol>
+        Done. You can now <code>#include &lt;libiomp/omp.h&gt;</code> and start
+        using <code>#pragma omp ...</code> in your source code.
         <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
               class="octicon octicon-link"></span></a>A simple example</h2>
         <script src="https://gist.github.com/clang-omp/638a40f3a797315661d6.js"></script>
