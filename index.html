@@ -18,7 +18,8 @@
         <h2 id="project_tagline">An implementation of the OpenMP C/C++ language
           extensions in Clang/LLVM compiler </h2>
         <div id="downloads"> <a class="nav_link" href="#try-openmp-clang">Try
-            it!</a> <a class="nav_link" href="#contribute">Contribute</a> <a class="nav_link"
+            it!</a> <a class="nav_link" href="#contribute">Contribute</a> <a class="nav_link"
+
             href="#status">Status</a> <a class="nav_link" href="#license">License</a>
           <a class="nav_link" href="#contact">Contact</a> <a class="nav_link" href="https://github.com/clang-omp/clang/wiki">Wiki</a>
         </div>
@@ -66,15 +67,18 @@
             declare reduction</code> directives.<br>
           September 27, 2013 - Added support of <code>proc_bind</code> clause.<br>
           August 23, 2013 - Initial release.</p>
-        <h1><a name="try-openmp-clang" class="anchor" href="#try-openmp-clang"><span
+        <h1><a name="try-openmp-clang" class="anchor" href="#try-openmp-clang"><span
+
               class="octicon octicon-link"></span></a>Try OpenMP/Clang</h1>
-        <h2><a name="getting-the-source-code" class="anchor" href="#getting-the-source-code"><span
+        <h2><a name="getting-the-source-code" class="anchor" href="#getting-the-source-code"><span
+
               class="octicon octicon-link"></span></a>Getting the source code</h2>
         <pre><code>$ git clone https://github.com/clang-omp/llvm
 $ git clone https://github.com/clang-omp/compiler-rt llvm/projects/compiler-rt
 $ git clone -b clang-omp https://github.com/clang-omp/clang llvm/tools/clang</code></pre>
         <p>The source code structure follows Clang/LLVM: <a href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.<br>
-          To run (rather than just compile) code you need to get and build an <a
+          To run (rather than just compile) code you need to get and build an <a
+
             href="http://openmp.llvm.org/">Intel® OpenMP* Runtime Library</a>.</p>
         <p>Also you can try to use trunk-based version of the compiler
           (supported by <a href="https://github.com/hfinkel">Hal Finkel</a>)</p>
@@ -84,11 +88,7 @@ $ git clone https://github.com/clang-omp/clang_trunk llvm/tools/clang</code></pr
         <h2><a name="building" class="anchor" href="#building"><span class="octicon octicon-link"></span></a>Building</h2>
         <p>To build clang with OpenMP support just follow the clang/LLVM
           compiler's standard build procedure (see <a href="http://clang.llvm.org/get_started.html">Getting
-            Started: Building and Running Clang</a>).<br>
-          <a target="_blank" href="http://kylehalladay.com/">Kyle Halladay</a>
-          has posted instruction on building clang with OpenMP support and
-          integrating it with XCode (see <a target="_blank" href="http://kylehalladay.com/all/blog/2014/07/15/Setting-Up-OpenMP-Mavericks.html">Setting
-            Up OpenMP on Mavericks</a>).</p>
+            Started: Building and Running Clang</a>).<br></p>
         <h2><a name="using" class="anchor" href="#using"><span class="octicon octicon-link"></span></a>Using</h2>
         <p>To use the newly installed compiler, add the following to your
           environment. On Mac OS X, replace LD_LIBRARY_PATH with
@@ -102,10 +102,10 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
           following options to enable OpenMP support and link to the runtime
           library.</p>
         <pre><code>-fopenmp</code></pre>
-        <h2><a name="using" class="anchor" href="file:///C:/Users/abataev/Documents/GitHub/clang-omp.github.io/index.html#using"><span
-              class="octicon octicon-link"></span></a>Using clang-omp with Xcode
-          (thanks to <a href="https://github.com/totalvoidness">Sebastian
-            Stenzel</a>)</h2>
+        <h2><a name="using" class="anchor" href="file:///C:/Users/abataev/Documents/GitHub/clang-omp.github.io/index.html#using"><span
+
+              class="octicon octicon-link"></span></a>Using clang-omp with Xcode</h2>
+        Instructions are provided by <a href="https://github.com/totalvoidness">Sebastian Stenzel</a>.
         <ol>
           <li>Install clang-omp using <a href="http://brew.sh/">homebrew</a>: <code>brew
               install clang-omp</code>.</li>
@@ -128,7 +128,8 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
         </ol>
         Done. You can now <code>#include &lt;libiomp/omp.h&gt;</code> and start
         using <code>#pragma omp ...</code> in your source code.
-        <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
+        <h2><a name="a-simple-example" class="anchor" href="#a-simple-example"><span
+
               class="octicon octicon-link"></span></a>A simple example</h2>
         <script src="https://gist.github.com/clang-omp/638a40f3a797315661d6.js"></script>
         <p>Confirm that the compiler is working correctly by saving the above
@@ -169,15 +170,11 @@ $ ./hello</code></pre>
               Validation Suite</a> by OpenUH Research Compiler - passed 119
             tests of 123.</li>
         </ul>
-        <h2><a name="supported-platforms" class="anchor" href="#supported-platforms"><span
+        <h2><a name="supported-platforms" class="anchor" href="#supported-platforms"><span
+
               class="octicon octicon-link"></span></a>Supported platforms</h2>
         <p>OS: Linux or Mac OS X<br>
           Architecture: x86, x86-64, PowerPC, Arm</p>
-        <h2><a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known
-          issues</h2>
-        <ul>
-          None.
-        </ul>
         <h2>Important Note</h2>
         <p>Please note that this is a preliminary version. While everything is
           carefully tested and works fine, there are known internal design
@@ -200,6 +197,15 @@ $ ./hello</code></pre>
         </ul>
         Also, please note that this development is based on latest released
         clang (3.5), not what is currently under development in clang trunk.
+        
+        <h1><a name="external_projects" class="anchor" href="#external_projects"><span class="octicon octicon-link"></span></a>External Projects</h1>
+        External projects based on this implementation of the OpenMP in the Clang compiler.
+        
+        <ul>
+        <li></li><a href="https://github.com/omp-check/llvm-clang/tree/hash_test">Implementation of an experimental "check" clause for "parallel for" pragma</a>
+        by Luis Felipe Mattos and Juan Salamanca from UNICAMP(Brazil).</li>
+        </ul>
+        
         <h1><a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
         <p><strong>LLVM</strong>, <strong>Clang</strong>, and <strong>Compiler-rt</strong>
           are distributed under LLVM's <a href="http://llvm.org/docs/DeveloperPolicy.html#license">the
@@ -241,7 +247,8 @@ $ ./hello</code></pre>
 
     </script>
       <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- clang-omp --> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+      <!-- clang-omp --> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+
         data-ad-client="ca-pub-6146592403541671" data-ad-slot="7285847142"></ins>
       <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
