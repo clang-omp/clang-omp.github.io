@@ -30,6 +30,8 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
+        <H2>Development activity of OpenMP support in clang/llvm compiler moved to <a href=http://www.llvm.org>www.llvm.org</a>.
+        Please get OpenMP-enabled clang (OpenMP 3.1 is fully supported in clang/llvm 3.7) and contribute to its further development there. This web-site is maintained for archival purposes only.</H2>
         <p>The OpenMP (<u>O</u>pen <u>M</u>ulti-<u>P</u>rocessing)
           specification is a standard for a set of compiler directives, library
           routines, and environment variables that can be used to specify shared
@@ -38,12 +40,10 @@
           C language family front-end for the <a href="http://llvm.org/">LLVM</a>
           compiler. The current scope of the project is to support the <a href="http://www.openmp.org/mp-documents/OpenMP4.0.0.pdf">OpenMP
             4.0</a> specification.</p>
-        <p>We plan eventually to contribute this implementation to the Clang
-          trunk; initial patches have already been committed. In the meantime,
-          you are welcome to try (and contribute to!) the OpenMP 4.0
-          implementation hosted here.</p>
-        <h1><a name="news" class="anchor" href="#news"><span class="octicon octicon-link"></span></a>News</h1>
-        <p>September 9, 2014 - Upgrade to clang/LLVM 3.5, updated link to LLVM
+                <h1><a name="news" class="anchor" href="#news"><span class="octicon octicon-link"></span></a>News</h1>
+        <p>November 27, 2015 - Further development of OpenMP support in clang/llvm compiler moved to www.llvm.org.
+        This site is maintained for archival purposes only. Thank you to everyone who contributed all these years!<br>
+          September 9, 2014 - Upgrade to clang/LLVM 3.5, updated link to LLVM
           OpenMP library.<br>
           June 10, 2014 - Initial support of <code>omp teams distribute [simd]</code>,<code>omp
             target teams distribute [simd]</code>,<code>omp teams distribute
@@ -120,10 +120,13 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
               <li>Add <code>-fopenmp</code> to <em>Other C Flags</em></li>
               <li>Add <code>/usr/local/include</code> to <em>Header Search
                   Paths</em></li>
-              <li style="box-sizing: border-box;">Set<span class="Apple-converted-space">&nbsp;</span><em
+              <li style="box-sizing: border-box;">Set<span class="Apple-converted-space">&nbsp;</span><em
+
                   style="box-sizing: border-box;">Enable Modules (C and
-                  Objective-C)</em><span class="Apple-converted-space">&nbsp;</span>to<span
-                  class="Apple-converted-space"> </span><span style="color: #222222;"><span
+                  Objective-C)</em><span class="Apple-converted-space">&nbsp;</span>to<span
+
+                  class="Apple-converted-space"> </span><span style="color: #222222;"><span
+
                     style="font-family: Consolas,'Liberation Mono',Menlo,Courier,monospace;"><code>No</code>.</span></span></li>
             </ul>
           </li>
