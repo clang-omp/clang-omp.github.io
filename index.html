@@ -111,7 +111,8 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
         <p>
         <ol>
           <li>Install clang-omp using <a href="http://brew.sh/">homebrew</a>: <code>brew
-              install clang-omp</code>.</li>
+              install llvm</code>.</li>
+          <li>Add llvm binaries to your path using : <code>echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.bash_profile</code>.</li>
           <li>Create a new Xcode project.</li>
           <li>Under Build Settings
             <ul>
