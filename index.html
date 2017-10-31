@@ -117,9 +117,9 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
           <li>Under Build Settings
             <ul>
               <li>Add a new user-defined setting <span style="font-style: italic;">CC</span>
-                with the value <code>/usr/local/bin/clang-omp</code></li>
+                with the value <code>/usr/local/opt/llvm/bin/clang</code></li>
               <li>Add <code>-fopenmp</code> to <em>Other C Flags</em></li>
-              <li>Add <code>/usr/local/include</code> to <em>Header Search
+              <li>Add <code>/usr/local/opt/llvm/include</code> to <em>Header Search
                   Paths</em></li>
               <li style="box-sizing: border-box;">Set<span class="Apple-converted-space">&nbsp;</span><em
 
@@ -133,7 +133,7 @@ export LD_LIBRARY_PATH=/install/prefix/lib:&lt;OpenMP library path&gt;:$LD_LIBRA
           </li>
           <li>Under <em>Build Phases</em>
             <ul>
-              <li>Add <code>/usr/local/lib/libiomp5.dylib</code> to <em>Link
+              <li>Add <code>/usr/local/opt/llvm/lib/libiomp5.dylib</code> to <em>Link
                   Binary With Libraries</em></li>
             </ul>
           </li>
